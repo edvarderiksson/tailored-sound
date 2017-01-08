@@ -1,0 +1,72 @@
+.light {
+    font-weight: 300;
+}
+
+.lead {
+    letter-spacing: 2px;
+}
+
+.lightlead {
+    letter-spacing: 1px;
+}
+
+
+body {
+    background-image: url("/static/images/trees.png");
+    background-size: cover;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+}
+    
+
+nav {
+    height: 40px;
+}
+
+
+
+
+
+#box {
+    background-color: #000000;
+    opacity: 0.86;
+    height: 130px;
+}
+
+
+
+p {
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+input {
+    width: 250px;
+    height: 30px;
+    font-size: 14px;
+}
+
+h1 {
+    margin-top: 150px;
+    margin-bottom: 80px;
+    font-size: 42px;
+}
+
+.button {
+    line-height:20px;
+	height: auto;
+    letter-spacing: 2px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    border-radius: 16px;
+    background-color: #444BC5;
+    border: none;
+    padding:4 15px;
+}
+
+.prpl {
+    color: #444BC5;
+    font-style: bold;
+    letter-spacing: 4px;
+}

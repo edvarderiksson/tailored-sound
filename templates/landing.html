@@ -1,0 +1,44 @@
+<!DOCTYPE>
+
+<html>
+    <head>
+         <link href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css" rel="stylesheet">
+        <link rel=stylesheet href="https://s3-us-west-2.amazonaws.com/colors-css/2.2.0/colors.min.css">
+        <link href="https://unpkg.com/basscss-btn@1.1.1/css/btn.css" rel="stylesheet">
+        <link href="https://unpkg.com/basscss-btn-primary@1.1.0/css/btn-primary.css" rel="stylesheet">
+        <link href="https://unpkg.com/basscss-background-images@0.1.1/css/background-images.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+        <link href="/static/stylesheets/style.css" rel="stylesheet">
+        <link href="{{ url_for('static', filename='stylesheets/style.css') }}" rel="stylesheet">
+    </head>
+    
+    
+    
+    <body class="m0">
+        
+        <nav class="m0 p1 clearfix fit bg-black">
+            <ul class="list-reset fit my1 p0">
+                 <li id="logo" class="pl2 inline-block mr1 left white light lead"><span class="prpl">t</span>ailored sound</li>
+                <li class="inline-block mr1 right white light lightlead light"><a class="white text-decoration-none" href="/">play</a></li>
+                <li class="inline-block mr1 right white lightlead light"><a href="/about" class="white text-decoration-none">about</a></li>
+            </ul> 
+        </nav>
+        
+        <h1 class="center lead">Find songs that speak to one another</h1>
+        
+        <div id="box" class="col-4 center mx-auto p2">
+            <form>
+                <p class="white center mx-auto p1">Create a playlist based on a shared word.</p>
+                <input type="text" class="input mr2" height="32"  name="text">
+                <button class="button">SEARCH</button>
+            </form>
+        </div>
+    
+    
+    
+    </body>
+
+
+
+</html>
