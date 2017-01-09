@@ -24,13 +24,10 @@ nav {
 }
 
 
-
-
-
 #box {
     background-color: #000000;
     opacity: 0.86;
-    height: 130px;
+    height: auto;
     margin-top: 250px;
 }
 

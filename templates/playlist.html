@@ -9,7 +9,7 @@
         <link href="https://unpkg.com/basscss-background-images@0.1.1/css/background-images.css" rel="stylesheet">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
-        <link href="/static/stylesheets/style.css" rel="stylesheet">
+        <!--<link href="/static/stylesheets/style.css" rel="stylesheet">-->
         <link href="{{ url_for('static', filename='stylesheets/style.css') }}" rel="stylesheet">
     </head>
     
@@ -29,7 +29,8 @@
             <h1 class="lead left">Your playlist</h1>
         </div>
         
-        <div id="box" class="col-8 center mx-auto p2">
+        <div id="box" class="col-8 center mx-auto p2 clearfix">
+            
             {% for i in songs %} 
    
             <iframe src="https://embed.spotify.com/?uri={{ i }}" width="900" height="90" frameborder="0" allowtransparency="true"></iframe>
