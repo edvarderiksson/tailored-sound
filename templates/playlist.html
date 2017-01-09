@@ -29,17 +29,14 @@
             <h1 class="lead left">Your playlist</h1>
         </div>
         
-        
         <div id="box" class="col-8 center mx-auto p2">
-            {% for key,value in songdict.iteritems() %} 
-            
-            <! -- songdict is the name of the dictionary -- change this! -->
-        
-            <iframe src="https://embed.spotify.com/?uri={{ value[0] }}" width="900" height="90" frameborder="0" allowtransparency="true"></iframe>
+            {% for i in songs %} 
+   
+            <iframe src="https://embed.spotify.com/?uri={{ i }}" width="900" height="90" frameborder="0" allowtransparency="true"></iframe>
                 
             {% endfor %}
         </div>
-    
+
     
     
     </body>

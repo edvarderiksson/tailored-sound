@@ -32,9 +32,10 @@ def landing_page():
 		return render_template('landing.html')
 	elif request.method == 'POST':
 		query = request.form['text']
-		get_songs(query)
+		# get_songs(query)
 		# Change to another template later
-		return redirect(url_for('/playlist/', query = query))
+		return redirect(url_for('playlist', query = query))
+		# return redirect('/playlist')
 
 
 # Specify path
@@ -58,11 +59,24 @@ def get_playlist():
 	# Convert json file into dict
 	data = json.loads(r.text)
 	
-@app.route("/playlist/", methods=['GET'])
+
 def get_songs(query):
 	r = requests.get('https://api.spotify.com/v1/search', params=get_params(query))
 	data = json.loads(r.text)
-	return "This is not the greatest song in the world"
+	songs = []
+
+	# Save all songs to a list
+	for i in range(0,len(data['tracks']['items'])):
+		songs.insert(i, data['tracks']['items'][i]['uri'])
+	# Convert list to string
+	# song_str = '\n'.join(songs)
+	# return song_str
+	return songs
+
+@app.route('/playlist<query>')
+def playlist(query):
+	return render_template('playlist.html', songs=get_songs(query))
+
 
 def get_params(query):
 	# Get input
