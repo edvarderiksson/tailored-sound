@@ -14,7 +14,7 @@ from unicodedata import normalize
 
 # Create templates folder
 tmpl_fldr = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
-app = Flask(__name__, template_folder=tmpl_fldr)
+app = Flask(__name__, template_folder=tmpl_fldr, static_url_path='/static')
 
 
 with open("key.json") as json_data_file:
