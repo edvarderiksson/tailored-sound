@@ -29,15 +29,12 @@ CLIENT_SECRET = key['CLIENT_SECRET']
 @app.route("/", methods = ['GET','POST'])
 def landing_page():
 	if request.method == 'GET':
-		print("hello1")
 		return render_template('landing.html')
 	elif request.method == 'POST':
-		print("hello2")
 		query = request.form['text']
-		print(query)
 		get_songs(query)
 		# Change to another template later
-		return redirect(url_for('landing.html', query = query))
+		return redirect(url_for('/playlist/', query = query))
 
 
 # Specify path
@@ -61,11 +58,11 @@ def get_playlist():
 	# Convert json file into dict
 	data = json.loads(r.text)
 	
-# @app.route("/<query>", methods=['GET'])
+@app.route("/playlist/", methods=['GET'])
 def get_songs(query):
 	r = requests.get('https://api.spotify.com/v1/search', params=get_params(query))
 	data = json.loads(r.text)
-	print(data)
+	return "This is not the greatest song in the world"
 
 def get_params(query):
 	# Get input
