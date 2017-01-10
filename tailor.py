@@ -5,20 +5,17 @@
 
 import json
 import requests
+import setup as stp 
 
 
-# returns parameters for search
-
-def get_params(query):
-	# Get input
-	# inp = {'q':query,'type':'track', 'limit': '10'}
-	inp = {'q':query,'type':'track', 'limit': '50'}
+# returns parameters for search, defailt values, except for query
+def get_params(query, tp='track', limit='50'):
+	
+	inp = {'q':query,'type':tp, 'limit': limit}
 
 	return inp 
 
 # Method that decides playlist length (between 1-100); 50 is default length
-
-
 
 
 # Method that finds (50) songs based on track input
