@@ -13,9 +13,7 @@ def get_params(query, tp='track', limit='50'):
 	
 	inp = {'q':query,'type':tp, 'limit': limit}
 
-	return inp 
-
-# Method that decides playlist length (between 1-100); 50 is default length
+	return inp
 
 
 # Method that finds (50) songs based on track input
