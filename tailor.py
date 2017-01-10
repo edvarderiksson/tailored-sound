@@ -6,10 +6,16 @@
 import json
 import requests
 import setup as stp 
+import sort as srt
+
+
 
 
 # returns parameters for search, defailt values, except for query
 def get_params(query, tp='track', limit='50'):
+
+	if mood==True:
+
 	
 	inp = {'q':query,'type':tp, 'limit': limit}
 
@@ -31,6 +37,32 @@ def get_track_songs(query):
 
 
 # Method that finds (50) songs based on mood input
+
+def get_mood_songs(query):
+	inp = {'q':query,'type':'playlist', 'limit': '1000'}
+	r = requests.get('https://api.spotify.com/v1/search', params=inp)
+	data = json.loads(r.text)
+
+	all_songs = []
+
+	# add all songs from every playlist to the list
+
+	i = 0
+	# needs to be corrected
+	for playlist in range(0,len(data['playlists'])):
+		for track in range(0,len(data['playlists'])):
+			all_songs.insert(i, data['tracks']['items'][i]['uri'])
+			i+=1
+
+
+	# sort the songs based on popularity using quicksort
+
+	# save the first (50)
+
+	# return the songs
+
+
+
 
 
 

@@ -9,7 +9,12 @@ import urllib
 import ast
 from unicodedata import normalize
 
-import tailor as tlr 
+import tailor as tlr
+
+'''
+*****Encoding spaces*****
+Encode spaces from input with the hex code %20 or +
+'''
 
 # Create templates folder
 tmpl_fldr = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
@@ -23,8 +28,6 @@ def landing_page():
 		return render_template('landing.html')
 	elif request.method == 'POST':
 		query = request.form['text']
-		# get_songs(query)
-		# Change to another template later
 		return redirect(url_for('playlist', query = query))
 	
 # Displays playlist on playlist page
