@@ -11,6 +11,7 @@ import urllib
 import ast
 from unicodedata import normalize
 
+import tailor as tlr 
 
 # Create templates folder
 tmpl_fldr = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
@@ -61,30 +62,10 @@ def get_playlist():
 	data = json.loads(r.text)
 	
 
-def get_songs(query):
-	r = requests.get('https://api.spotify.com/v1/search', params=get_params(query))
-	data = json.loads(r.text)
-	songs = []
-
-	# Save all songs to a list
-	for i in range(0,len(data['tracks']['items'])):
-		songs.insert(i, data['tracks']['items'][i]['uri'])
-	# Convert list to string
-	# song_str = '\n'.join(songs)
-	# return song_str
-	return songs
-
 @app.route('/playlist<query>')
 def playlist(query):
-	return render_template('playlist.html', songs=get_songs(query))
+	return render_template('playlist.html', songs=tlr.get_track_songs(query))
 
-
-def get_params(query):
-	# Get input
-	# inp = {'q':query,'type':'track', 'limit': '10'}
-	inp = {'q':query,'type':'track', 'limit': '50'}
-
-	return inp 
 
 # get_playlist()
 if __name__ == "__main__":
