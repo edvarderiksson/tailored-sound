@@ -10,7 +10,6 @@ import sort as srt
 
 
 
-
 # returns parameters for search, defailt values, except for query
 def get_params(query, tp='track', limit='50'):
 
@@ -39,7 +38,7 @@ def get_track_songs(query):
 # Method that finds (50) songs based on mood input
 
 def get_mood_songs(query):
-	inp = {'q':query,'type':'playlist', 'limit': '1000'}
+	inp = {'q':query,'type':'playlist', 'limit': '100'}
 	r = requests.get('https://api.spotify.com/v1/search', params=inp)
 	data = json.loads(r.text)
 
@@ -55,11 +54,13 @@ def get_mood_songs(query):
 			i+=1
 
 
-	# sort the songs based on popularity using quicksort
+	# replace array with dictionary and keep track of instances of track
 
 	# save the first (50)
 
 	# return the songs
+
+	return all_songs
 
 
 
