@@ -31,9 +31,9 @@ def main():
 	r = requests.post('https://accounts.spotify.com/api/token', data=gt, headers=headers)
 	result = r.text
 	token = ast.literal_eval(result)['access_token']
+	authorization_header = {"Authorization":"Bearer {}".format(token)}
 
-	return(token)
+	return authorization_header
 
-	
 
 	
