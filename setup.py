@@ -21,10 +21,13 @@ def main():
 	# Need to solve encoding error in order to make this work	
 	# Get tokens
 	gt = {'grant_type':'client_credentials'}
-	encoded = base64.b64encode(CLIENT_ID+":"+CLIENT_SECRET)
+	
+	#encoded = base64.b64encode(CLIENT_ID+":"+CLIENT_SECRET) works in Python 2, but not Python 3
+	raw = CLIENT_ID+":"+CLIENT_SECRET
+	pre_encoded = raw.encode('ascii')
+	encoded = base64.b64encode(raw.encode())
+	encoded = encoded.decode("utf-8") 
 	headers = {'Authorization':'Basic '+encoded}
-	auth = base64.b64encode(CLIENT_ID + ":" + CLIENT_SECRET)
-	headers = {'Authorization': 'Basic  ' + auth}
 	r = requests.post('https://accounts.spotify.com/api/token', data=gt, headers=headers)
 	result = r.text
 	token = ast.literal_eval(result)['access_token']
