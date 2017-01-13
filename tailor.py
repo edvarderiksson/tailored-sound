@@ -42,6 +42,7 @@ def get_mood_songs(query):
 
 	playlist_num = 0
 	for playlist in range(0,len(data['playlists']['items'])):
+		print(data['playlists']['items'][i]['name'])
 		# *************************************
 		# Code that deals with second request
 		# Called from setup

@@ -11,6 +11,7 @@
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
         <!--<link href="/static/stylesheets/style.css" rel="stylesheet">-->
+        
         <link href="{{ url_for('static', filename='stylesheets/style.css') }}" rel="stylesheet">
     </head>
     
@@ -37,11 +38,20 @@
             <iframe src="https://embed.spotify.com/?uri={{ i }}" width="900" height="90" frameborder="0" allowtransparency="true"></iframe>
                 
             {% endfor %}
-            <form>
-                <button type="submit" class="button right" data-toggle="modal" data-target="#exampleModal">ADD PLAYLIST TO SPOTIFY</button>
+            <form action="." method="POST">
+                <button type="submit" class="button right" data-toggle="modal" data-target="#exampleModal">ADD PLAYLIST TO YOUR SPOTIFY</button>
             </form>
+
+            
              
         </div>
+        
+
+       <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          Launch demo modal
+        </button>-->
+
+        <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -63,7 +73,7 @@
                 {% endwith %}
               </div>
               <div class="modal-footer">
-              <form action="playlist" method="POST">
+              <form action="." method="POST">
                 <input type="text" class="input mr2" height="32"  name="text">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -77,9 +87,7 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    
-    
-    </body>
+        </body>
 
 
 

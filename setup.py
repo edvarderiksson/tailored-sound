@@ -7,7 +7,7 @@ import requests
 import base64
 import ast
 
-def main():
+def basic_credentials():
 
 	with open("key.json") as json_data_file:
 		key = json.load(json_data_file)
@@ -35,5 +35,7 @@ def main():
 
 	return authorization_header
 
+
+	
 
 	
