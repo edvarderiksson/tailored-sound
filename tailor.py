@@ -49,6 +49,10 @@ def get_mood_songs(query):
 	i = 0
 	# needs to be corrected
 	for playlist in range(0,len(data['playlists'])):
+		# *************************************
+		# Code that deals with second request
+		# Called from setup
+		# *************************************
 		for track in range(0,len(data['playlists'])):
 			all_songs.insert(i, data['tracks']['items'][i]['uri'])
 			i+=1
