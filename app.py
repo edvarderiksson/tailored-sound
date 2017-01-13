@@ -10,6 +10,7 @@ import ast
 from unicodedata import normalize
 
 import tailor as tlr
+import tester as tester
 
 '''
 *****Encoding spaces*****
@@ -33,7 +34,8 @@ def landing_page():
 # Displays playlist on playlist page
 @app.route('/playlist/<query>')
 def playlist(query):
-	return render_template('playlist.html', songs=tlr.get_track_songs(query))
+	#return render_template('playlist.html', songs=tlr.get_track_songs(query))
+	return render_template('playlist.html', songs=tester.auth_tester(query))
 
 
 if __name__ == "__main__":

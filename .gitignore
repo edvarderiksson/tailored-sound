@@ -1,3 +1,4 @@
 #Stuff to ignore
 *key.json
 *.sketch
+*testauth.py
