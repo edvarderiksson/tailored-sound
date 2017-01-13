@@ -62,8 +62,8 @@ def get_mood_songs(query):
 			#print(track_data['items'][z]['track']['uri'])
 			#all_songs.append(track_data['items'][z]['track']['uri'])
 			song_num += 1
-
-		return srt.get_fifty(all_songs)
+			
+	return srt.get_fifty(all_songs)
 '''
 	most_popular = []
 	for key, value in all_songs.items():

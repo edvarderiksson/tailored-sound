@@ -8,12 +8,15 @@
 
 # 50 most popular
 
-def get_fifty(all_songs):
+def get_fifty(d):
+	songs = sorted(d, key=d.get)
 	top_songs = []
-	v=list(all_songs.values())
-	k=list(all_songs.keys())
+
+	print("hello")
 	i = 0
+	# add lenght methods for dictionaries shorter than 50
 	while(i < 50):
-		top_songs.append (k[v.pop(v.index(max(v)))])
+		top_songs.append(songs[i])
+		i+=1
 
 	return top_songs
