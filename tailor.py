@@ -42,13 +42,13 @@ def get_mood_songs(query):
 
 	playlist_num = 0
 	for playlist in range(0,len(data['playlists']['items'])):
-		print(data['playlists']['items'][i]['name'])
+		#print(data['playlists']['items'][i]['name'])
 		# *************************************
 		# Code that deals with second request
 		# Called from setup
 		# *************************************
 		url = data['playlists']['items'][playlist_num]['tracks']['href']
-		track_response = requests.get(url, headers=stp.main())
+		track_response = requests.get(url, headers=stp.basic_credentials())
 		track_data = json.loads(track_response.text)
 		playlist_num += 1
 		song_num = 0

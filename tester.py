@@ -4,11 +4,12 @@
 import tailor as tlr
 import setup as stp
 
+
 def auth_tester(query):
 
 	# return tlr.get_mood_songs(query)
 	t = stp.basic_credentials()
-	return tlr.get_mood_songs(query,t)
+	return tlr.get_mood_songs(query)
 
 
 

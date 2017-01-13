@@ -4,7 +4,8 @@ import requests
 import base64
 import urllib.parse
 
-
+# currently not used
+# ideally where we would move the code from app.py to make more modular
 
 def add_playlist(user_info):
 	# https://developer.spotify.com/web-api/create-playlist/
