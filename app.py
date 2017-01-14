@@ -52,7 +52,7 @@ def landing_page():
 @app.route('/playlist/<query>', methods = ['GET','POST'])
 def playlist(query):
 	if request.method == 'GET':
-		current_songs = tester.auth_tester(query)
+		current_songs = tlr.get_mood_songs(query)
 		session['songs'] = current_songs
 		return render_template('playlist.html', songs=current_songs)
 
