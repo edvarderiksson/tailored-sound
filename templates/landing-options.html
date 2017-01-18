@@ -1,0 +1,84 @@
+<!DOCTYPE>
+
+<html>
+    <head>
+        <link href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css" rel="stylesheet">
+        <link rel=stylesheet href="https://s3-us-west-2.amazonaws.com/colors-css/2.2.0/colors.min.css">
+        <link href="https://unpkg.com/basscss-btn@1.1.1/css/btn.css" rel="stylesheet">
+        <link href="https://unpkg.com/basscss-btn-primary@1.1.0/css/btn-primary.css" rel="stylesheet">
+        <link href="https://unpkg.com/basscss-background-images@0.1.1/css/background-images.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+        <link href="/static/stylesheets/style.css" rel="stylesheet">
+        <link href="stylesheets/style.css" rel="stylesheet">
+        <link href="{{ url_for('static', filename='stylesheets/style.css') }}" rel="stylesheet">
+    </head>
+    
+    
+    
+    <body class="m0">
+        
+        <nav class="m0 py1 clearfix fit bg-black">
+            <ul class="list-reset fit my1 p0">
+                 <li id="logo" class="pl2 inline-block mr1 left white light lead prpl">tailored sound</li>
+                <li class="inline-block mr1 right white light lightlead light"><a class="white text-decoration-none" href="/">play</a></li>
+                <li class="inline-block mr1 right white lightlead light"><a href="/about" class="white text-decoration-none">about</a></li>
+            </ul> 
+        </nav>
+        
+        <h1 class="center lead" id="title">Find songs that speak to one another</h1>
+        
+        <div id="box" class="col-4 center mx-auto p2">
+            <form action="." method="POST">
+                <p class="white left mx-auto p1">Create a playlist.</p>
+            
+                
+                <div class="input-group">
+                  <div class="input-group-btn">
+                    <button id="default-dropdown" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Mood
+                    </button>
+                    <div class="dropdown-menu">
+                      <a id="unchosen-dropdown" class="dropdown-item" href="#">Word</a>
+                    </div>
+                      
+                  </div>
+                  <input type="text" class="form-control" name="text" aria-label="Text input with dropdown button" id="search">
+                    <button id="default-button" class="button button-solid">SEARCH</button>
+                
+                </div>
+                <a id="more-options" class="button button-outline right my1">More options</a>
+                
+                
+                <div id="hidden-options">
+                    <div class="form-group">
+                        <label class="left" for="formGroupExampleInput">Genres to include</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="pop">
+                    </div>
+                    <div class="form-group">
+                        <label class="left" for="formGroupExampleInput2">Genres to exclude</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="1972">
+                    </div>
+                    <div class="form-group">
+                        <label class="left" for="formGroupExampleInput2">Years</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="rock, opera, hip-hop">
+                        <button id="hidden-button" class="button button-solid right my2 p2">SEARCH</button>
+                    </div>
+                    
+                </div>
+                
+            </form>
+        </div>
+    
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        <script src="/static/js/script.js"></script>
+    
+    
+    </body>
+
+
+
+</html>
