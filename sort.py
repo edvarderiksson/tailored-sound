@@ -12,7 +12,6 @@ def get_fifty(d):
 	songs = sorted(d, key=d.get)
 	top_songs = []
 
-	print("hello")
 	i = 0
 	# add lenght methods for dictionaries shorter than 50
 	while(i < 50):

@@ -11,7 +11,6 @@ from unicodedata import normalize
 
 import tailor as tlr
 import setup as stp
-import tester as tester
 import testauth as testauth
 import base64 # temp
 import json # temp
@@ -21,16 +20,6 @@ import requests # temp
 *****Encoding spaces*****
 Encode spaces from input with the hex code %20 or +
 '''
-
-# Globals
-current_songs = []
-with open("key.json") as json_data_file:
-        key = json.load(json_data_file)
-
-
-# links to keys
-CLIENT_ID = key['CLIENT_ID'] 
-CLIENT_SECRET = key['CLIENT_SECRET']
 
 # Create templates folder
 tmpl_fldr = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
@@ -45,6 +34,11 @@ def landing_page():
 	if request.method == 'GET':
 		return render_template('landing.html')
 	elif request.method == 'POST':
+		#**********
+		# Need to solve here problem of exclusion
+		# Can concatenate input with correct formatting
+		# Best to only have query to pass on later
+		#**********
 		query = request.form['text']
 		return redirect(url_for('playlist', query = query))
 	

@@ -68,7 +68,8 @@ def get_genre_songs(query):
 
 
 # Method that finds (50) songs based mood where you can exclude genres you don't like
-
+# Unnecessary should be taken care of at input level in app.py
+'''
 def get_mood_songs(query, exclude):
 	# Move this code to the text entry so that this method does not need to be overloaded
 	full_query = query + '+NOT+' + exclude
@@ -96,7 +97,7 @@ def get_mood_songs(query, exclude):
 			song_num += 1
 			
 	return srt.get_fifty(all_songs)
-
+'''
 
 
 
