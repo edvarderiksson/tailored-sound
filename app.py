@@ -11,15 +11,9 @@ from unicodedata import normalize
 
 import tailor as tlr
 import setup as stp
-import testauth as testauth
 import base64 # temp
 import json # temp
 import requests # temp
-
-'''
-*****Encoding spaces*****
-Encode spaces from input with the hex code %20 or +
-'''
 
 # Create templates folder
 tmpl_fldr = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
@@ -53,14 +47,14 @@ def playlist(query):
 	elif request.method == 'POST':
 		playlist_name = request.form['text']
 		session['playlist_name']=playlist_name
-		return testauth.index()
+		return stp.index()
 
 
 
 #routing for "Add playlist to Spotify" button on playlist results template page
 @app.route('/playlist', methods=['POST'])
 def auth():
-	return testauth.index()
+	return stp.index()
 
 # callback function that runs after Spotify redirects here after a successful user authentication
 @app.route("/addplaylist/q") # make sure to add this url ("http://127.0.0.1:5000/addplaylist/q") to your Spotify Developers My Apps page

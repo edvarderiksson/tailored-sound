@@ -1,4 +1,3 @@
-import testauth
 from flask import Flask, request, redirect, g, render_template
 import requests
 import base64
