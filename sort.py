@@ -14,7 +14,7 @@ def get_fifty(d):
 
 	i = 0
 	# add lenght methods for dictionaries shorter than 50
-	while(i < 50):
+	while(i < 10):
 		top_songs.append(songs[i])
 		i+=1
 

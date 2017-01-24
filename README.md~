@@ -1,5 +1,4 @@
-# Welcome to tailored sound!
-
+This is the README file!
 
 Tailored sounds allows users to create custom playlists easier than ever!
 
@@ -11,7 +10,10 @@ List of search functions:
 - Mood
 - Track
 - Genre
-- Year
+
+# Need to add 'Exclude' option to interface so that
+# it is possible to input mood and genres to exclude
+
 
 
 
