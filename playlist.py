@@ -1,7 +1,6 @@
 from flask import Flask, request, redirect, g, render_template
 import requests
 import base64
-import urllib.parse
 
 # currently not used
 # ideally where we would move the code from app.py to make more modular

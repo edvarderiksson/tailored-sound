@@ -8,16 +8,19 @@ import requests
 import base64
 import ast
 import urllib
-import urllib.parse
 import playlist
 
 with open("key.json") as json_data_file:
 	key = json.load(json_data_file)
 
+'''
+Anything that deals with API calls goes in this file
 
-	# links to keys
-	CLIENT_ID = key['CLIENT_ID'] 
-	CLIENT_SECRET = key['CLIENT_SECRET']
+'''
+
+# links to keys
+CLIENT_ID = key['CLIENT_ID'] 
+CLIENT_SECRET = key['CLIENT_SECRET']
 
 def basic_credentials():
 
@@ -117,17 +120,6 @@ def callback():
 
 	# Authentication Steps, paramaters, and responses are defined at https://developer.spotify.com/web-api/authorization-guide/
 # Visit this url to see all the steps, parameters, and expected response. 
-
-
-#app = Flask(__name__)
-with open("key.json") as json_data_file:
-        key = json.load(json_data_file)
-
-
-# links to keys
-CLIENT_ID = key['CLIENT_ID'] 
-CLIENT_SECRET = key['CLIENT_SECRET']
-
 
 
 # Spotify URLS

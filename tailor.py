@@ -1,6 +1,6 @@
 # Tailor deals with the low-level work ad contains
 # the algoithms tht create the custom playlists
-# based on input from app.py class
+# based on input from app.py 
 # @Author Edvard Eriksson @Author Andrea Simes
 
 import json 
@@ -62,11 +62,3 @@ def get_genre_songs(query):
 		songs.insert(i, data['tracks']['items'][i]['uri'])
 	# return list of uris
 	return songs
-
-
-
-
-
-
-
-get_track_songs('red')
