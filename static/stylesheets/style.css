@@ -139,3 +139,7 @@ h1 {
     margin-right: -10px;
     z-index: 0;
 }
+
+option {
+    color: red;
+}
