@@ -19,10 +19,10 @@ $("#more-options").click(function(event) {
     $("#unchosen-dropdown").text(def);
 });*/
 
-$("#unchosen-dropdown").click(function(event) {
+/*$("#unchosen-dropdown").click(function(event) {
     event.preventDefault();
     var unchosen = $("#unchosen-dropdown").value();
     var def = $("#default-dropdown").value();
     $("#default-dropdown").value(unchosen);
     $("#unchosen-dropdown").value(def);
-});
+});*/

@@ -28,7 +28,9 @@ def landing_page():
 	if request.method == 'GET':
 		return render_template('landing-options.html')
 	elif request.method == 'POST':
-		query = request.form['text']
+		dropdown = request.form['dropdown']
+		print(dropdown)
+		query = request.form['main-input']
 		return redirect(url_for('playlist', query=query))
 	
 
