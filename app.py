@@ -1,4 +1,4 @@
-# app.py class deals with user input and Flask output
+# app.py deals with user input and Flask output
 # @Author Andrea Simes @Author Edvard Eriksson
 
 
@@ -23,38 +23,33 @@ app.secret_key = os.urandom(24)
 
 
 # Loads main page and accepts user input
-@app.route("/", methods = ['GET','POST'])
+@app.route("/", methods=['GET','POST'])
 def landing_page():
 	if request.method == 'GET':
 		return render_template('landing-options.html')
 	elif request.method == 'POST':
-		#**********
-		# Need to solve here problem of exclusion
-		# Can concatenate input with correct formatting
-		# Best to only have query to pass on later
-		#**********
-		query = request.form['main-input']
-		return redirect(url_for('playlist', query = query))
+		query = request.form['text']
+		return redirect(url_for('playlist', query=query))
 	
+
 # Displays playlist on playlist page
-@app.route('/playlist/<query>', methods = ['GET','POST'])
+@app.route('/playlist/<query>', methods=['GET','POST'])
 def playlist(query):
 	if request.method == 'GET':
 		current_songs = tlr.get_mood_songs(query)
 		session['songs'] = current_songs
 		return render_template('playlist.html', songs=current_songs)
-
 	elif request.method == 'POST':
 		playlist_name = request.form['text']
-		session['playlist_name']=playlist_name
+		session['playlist_name'] = playlist_name
 		return stp.index()
-
 
 
 #routing for "Add playlist to Spotify" button on playlist results template page
 @app.route('/playlist', methods=['POST'])
 def auth():
 	return stp.index()
+
 
 # callback function that runs after Spotify redirects here after a successful user authentication
 @app.route("/addplaylist/q") # make sure to add this url ("http://127.0.0.1:5000/addplaylist/q") to your Spotify Developers My Apps page
