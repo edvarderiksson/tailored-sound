@@ -8,7 +8,6 @@ import requests
 import base64
 import ast
 import urllib
-import urllib.parse
 import playlist
 
 with open("key.json") as json_data_file:

@@ -26,14 +26,14 @@ app.secret_key = os.urandom(24)
 @app.route("/", methods = ['GET','POST'])
 def landing_page():
 	if request.method == 'GET':
-		return render_template('landing.html')
+		return render_template('landing-options.html')
 	elif request.method == 'POST':
 		#**********
 		# Need to solve here problem of exclusion
 		# Can concatenate input with correct formatting
 		# Best to only have query to pass on later
 		#**********
-		query = request.form['text']
+		query = request.form['main-input']
 		return redirect(url_for('playlist', query = query))
 	
 # Displays playlist on playlist page

@@ -36,15 +36,15 @@
                 
                 <div class="input-group">
                   <div class="input-group-btn">
-                    <button id="default-dropdown" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Mood
-                    </button>
+                    <input id="default-dropdown" type="button" name="dropdown" value="Mood" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     <!-- Mood
+                    </button>-->
                     <div class="dropdown-menu">
                       <a id="unchosen-dropdown" class="dropdown-item" href="#">Word</a>
                     </div>
                       
                   </div>
-                  <input type="text" class="form-control" name="text" aria-label="Text input with dropdown button" id="search">
+                  <input type="text" class="form-control" name="main-input" aria-label="Text input with dropdown button" id="search">
                     <button id="default-button" class="button button-solid">SEARCH</button>
                 
                 </div>
@@ -58,11 +58,11 @@
                     </div>
                     <div class="form-group">
                         <label class="left" for="formGroupExampleInput2">Genres to exclude</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="1972">
+                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="rock, opera, hip-hop">
                     </div>
                     <div class="form-group">
                         <label class="left" for="formGroupExampleInput2">Years</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="rock, opera, hip-hop">
+                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="1972">
                         <button id="hidden-button" class="button button-solid right my2 p2">SEARCH</button>
                     </div>
                     
@@ -75,6 +75,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
         <script src="/static/js/script.js"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename = 'js/script.js') }}"></script>
+
     
     
     </body>
