@@ -21,25 +21,40 @@
         
         <nav class="m0 p1 clearfix fit bg-black">
             <ul class="list-reset fit my1 p0">
-                 <li id="logo" class="pl2 inline-block mr1 left white light lead"><span class="prpl">t</span>ailored sound</li>
+                 <li id="logo" class="pl2 inline-block mr1 left white light lead prpl">tailored sound</li>
                 <li class="inline-block mr1 right white light lightlead light"><a class="white text-decoration-none" href="/">play</a></li>
                 <li class="inline-block mr1 right white lightlead light"><a href="/about" class="white text-decoration-none">about</a></li>
             </ul> 
         </nav>
         
-        <div class="col-8 mx-auto">
-            <h1 class="lead left">Your playlist</h1>
+        <nav class="m0 p1 clearfix fit bg-white">
+            {% with messages = get_flashed_messages() %}
+                  {% if messages %}
+                
+                    {% for message in messages %}
+                        <p class="green center">{{ message }}</p>
+                    {% endfor %}
+                    
+                  {% endif %}
+            {% endwith %}
+        </nav>
+        
+        <div class="col-8 mx-auto mb2">
+            <h1 class="lead left my1 heavy">Your playlist</h1>
         </div>
         
         <div id="box" class="col-8 center mx-auto p2 clearfix">
+            
+            
+            
             
             {% for i in songs %} 
    
             <iframe src="https://embed.spotify.com/?uri={{ i }}" width="900" height="90" frameborder="0" allowtransparency="true"></iframe>
                 
             {% endfor %}
-            <form action="." method="POST">
-                <button type="submit" class="button right" data-toggle="modal" data-target="#exampleModal">ADD PLAYLIST TO YOUR SPOTIFY</button>
+            <form>
+                <button type="button" class="button right" data-toggle="modal" data-target="#exampleModal">ADD PLAYLIST TO YOUR SPOTIFY</button>
             </form>
 
             
@@ -56,25 +71,18 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Please enter a name for your playlist.</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body">
-                {% with messages = get_flashed_messages() %}
-                  {% if messages %}
-                    <ul>
-                    {% for message in messages %}
-                      <li>{{ message }}</li>
-                    {% endfor %}
-                    </ul>
-                  {% endif %}
-                {% endwith %}
+                <p>Playlist already added.</p>
               </div>
+                <form action="/playlist" method="POST">
+                <input type="text" class="input mr2 ml2 mb2" height="32"  name="text">
               <div class="modal-footer">
-              <form action="." method="POST">
-                <input type="text" class="input mr2" height="32"  name="text">
+              
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form>

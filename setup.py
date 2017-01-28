@@ -2,13 +2,17 @@
 # that require authentication
 # @ Author Edvard Eriksson @ Author Andrea Simes
 
-from flask import Flask, request, redirect, g, render_template
+from flask import Flask, request, redirect, g, render_template, session, flash
 import json
 import requests
 import base64
 import ast
-import urllib
 import playlist
+
+try:
+    from urllib.parse import urlparse
+except ImportError:
+     from urlparse import urlparse
 
 with open("key.json") as json_data_file:
 	key = json.load(json_data_file)
@@ -95,6 +99,7 @@ def callback():
 	headers = {'Authorization':'Bearer ' + user_info['access_token'], 'Content-Type':'application/json'}
 	r = requests.post(user_info['api']+'/playlists', data=gt, headers=headers) # POST request to create playlist
 	playlist_response = json.loads(r.text)
+	print(playlist_response)
 	playlist_id = playlist_response['id'] # find playlist id so we can later add songs
 
     # collect already found songs that were displayed before
@@ -105,7 +110,7 @@ def callback():
 	data = json.dumps({"uris":current_songs}) # use current songs as the songs to add to playlist
 	r = requests.post(url, data = data, headers = headers) # POST method to add songs to playlist we just created
 
-	flash("Playlist added") # Flask flash message added so we can display feedback to user eventually 
+	flash("Playlist added!") # Flask flash message added so we can display feedback to user eventually 
 
 	return render_template("playlist_loggedin.html",songs=current_songs) # render template again with songs we already found using tailor.py
 	
@@ -149,11 +154,12 @@ auth_query_parameters = {
     "client_id": CLIENT_ID
 }
 #print(auth_query_parameters)
+#GET https://accounts.spotify.com/authorize/?client_id=5fe01282e44241328a84e7c5cc169165&response_type=code&redirect_uri=https%3A%2F%2Fexample.com%2Fcallback&scope=user-read-private%20user-read-email&state=34fFs29kd09
 
 #@app.route("/")
 def index():
     # Auth Step 1: Authorization
-    url_args = "&".join(["{}={}".format(key,urllib.parse.quote(val)) for key,val in auth_query_parameters.items()])
+    url_args = "&".join(["{}={}".format(key,val) for key,val in auth_query_parameters.items()])
     auth_url = "{}/?{}".format(SPOTIFY_AUTH_URL, url_args)
     #auth_url = "{}/?{}".format(SPOTIFY_AUTH_URL, auth_query_parameters)
     return redirect(auth_url)

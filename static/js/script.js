@@ -1,3 +1,20 @@
+
+/*$(function () {
+    $('body').show();
+}); */
+
+/*var img = new Image();
+    img.src = '/static/images/trees.png';
+
+var int = setInterval(function() {
+    if (img.complete) {
+        clearInterval(int);
+        document.getElementsByTagName('body')[0].style.backgroundImage = 'url(' + img.src + ')';
+    }
+}, 50);*/
+
+
+
 $("#more-options").click(function(event) {
     event.preventDefault();
     if($("#more-options").text() == "More options"){
@@ -34,3 +51,4 @@ $("#more-options").click(function(event) {
     $("#default-dropdown").value(unchosen);
     $("#unchosen-dropdown").value(def);
 });*/
+

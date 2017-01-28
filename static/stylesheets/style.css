@@ -2,6 +2,10 @@
     font-weight: 300;
 }
 
+.heavy {
+    font-weight: 700;
+}
+
 .lead {
     letter-spacing: 2px;
 }
@@ -12,10 +16,18 @@
 
 
 body {
-    background-image: url("/static/images/trees.png");
-    background-size: cover;
+    //display: none;
+    background-image: url(/static/images/trees.png);
+    //background-attachment: fixed;
+    background-position: center center;
     font-family: "Roboto", sans-serif;
-    font-weight: 300;
+    //font-weight: 300;
+    
+    -moz-background-size:    cover;
+    -ms-background-size:     cover;
+    -o-background-size:      cover;
+    -webkit-background-size: cover;
+    background-size:         cover;
 }
     
 
@@ -51,7 +63,6 @@ h1 {
     margin-top: 150px;
     margin-bottom: 50px;
     font-size: 64px;
-    font-weight: 400;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -108,7 +119,11 @@ h1 {
 
 
 #default-dropdown {
+    z-index: 1;
     font-size: 13px;
+    height: 30px;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
 }
 
 
@@ -133,13 +148,19 @@ h1 {
     z-index: 10;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
+    height: 30px;
 }
 
 #search {
+    margin-left: -2px;
     margin-right: -10px;
     z-index: 0;
 }
 
 option {
     color: red;
+}
+
+.modal-footer {
+    margin-top: 50px;
 }
