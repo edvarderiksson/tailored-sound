@@ -37,7 +37,10 @@ def landing_page():
 		print(include)
 		print(exclude)
 		print(years)
-		return redirect(url_for('playlist', query=query))
+		if years != None:
+			query = query + " year:" + years
+			print(query) 
+		return redirect(url_for('playlist', query=query, dropdown=dropdown))
 	
 
 # Displays playlist on playlist page
