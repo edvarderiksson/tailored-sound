@@ -18,7 +18,7 @@ import requests # temp
 # Create templates folder
 tmpl_fldr = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
 static_fldr = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static')
-app = Flask(__name__, template_folder=tmpl_fldr, static_url_path="")
+app = Flask(__name__, template_folder=tmpl_fldr, static_folder=static_fldr)
 app.secret_key = os.urandom(24)
 
 
@@ -37,7 +37,7 @@ def landing_page():
 		print(include)
 		print(exclude)
 		print(years)
-		return redirect(url_for('playlist', query=query))
+		return redirect(url_for('playlist', query=query, dropdown=dropdown))
 	
 
 # Displays playlist on playlist page
@@ -53,14 +53,18 @@ def playlist(query, dropdown):
 			session['songs'] = current_songs
 			return render_template('playlist.html', songs=current_songs)
 	elif request.method == 'POST':
-		playlist_name = request.form['main-input']
+		playlist_name = request.form['text']
 		session['playlist_name'] = playlist_name
+		print("hello");
 		return stp.index()
 
 
 #routing for "Add playlist to Spotify" button on playlist results template page
 @app.route('/playlist', methods=['POST'])
 def auth():
+	playlist_name = request.form['text']
+	session['playlist_name'] = playlist_name
+	print("hi");
 	return stp.index()
 
 
