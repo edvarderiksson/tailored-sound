@@ -31,18 +31,23 @@ def landing_page():
 		dropdown = request.form['dropdown']
 		print(dropdown)
 		query = request.form['main-input']
-		return redirect(url_for('playlist', query=query))
+		return redirect(url_for('playlist', query=query, dropdown=dropdown))
 	
 
 # Displays playlist on playlist page
-@app.route('/playlist/<query>', methods=['GET','POST'])
-def playlist(query):
+@app.route('/playlist/<query>+<dropdown>', methods=['GET','POST'])
+def playlist(query, dropdown):
 	if request.method == 'GET':
-		current_songs = tlr.get_mood_songs(query)
-		session['songs'] = current_songs
-		return render_template('playlist.html', songs=current_songs)
+		if dropdown == 'mood':
+			current_songs = tlr.get_mood_songs(query)
+			session['songs'] = current_songs
+			return render_template('playlist.html', songs=current_songs)
+		elif dropdown == 'word':
+			current_songs = tlr.get_track_songs(query)
+			session['songs'] = current_songs
+			return render_template('playlist.html', songs=current_songs)
 	elif request.method == 'POST':
-		playlist_name = request.form['text']
+		playlist_name = request.form['main-input']
 		session['playlist_name'] = playlist_name
 		return stp.index()
 
