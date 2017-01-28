@@ -28,9 +28,15 @@ def landing_page():
 	if request.method == 'GET':
 		return render_template('landing-options.html')
 	elif request.method == 'POST':
+		# dropdown will hold the value 'mood' or 'word'
 		dropdown = request.form['dropdown']
-		print(dropdown)
 		query = request.form['main-input']
+		include = request.form['include']
+		exclude = request.form['exclude']
+		years = request.form['years']
+		print(include)
+		print(exclude)
+		print(years)
 		return redirect(url_for('playlist', query=query))
 	
 
