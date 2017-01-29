@@ -37,9 +37,12 @@ def landing_page():
 		print(include)
 		print(exclude)
 		print(years)
+<<<<<<< HEAD
 		if years != None:
 			query = query + " year:" + years
 			print(query) 
+=======
+>>>>>>> bf8ec04e96465323726754d2aab76b5848cdcc2f
 		return redirect(url_for('playlist', query=query, dropdown=dropdown))
 	
 
