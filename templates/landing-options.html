@@ -27,52 +27,61 @@
             </ul> 
         </nav>
         
-        <h1 class="center lead" id="title">Find songs that speak to one another</h1>
-        
-        <div id="box" class="col-4 center mx-auto p2">
-            <form action="." method="POST">
-                <p class="white left mx-auto p1">Create a playlist.</p>
-            
-                
-                <div class="input-group">
-                  <!--<div class="input-group-btn">-->
-                    <select id="default-dropdown" type="button" name="dropdown" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <option value="mood">Mood</option>
-                        <option value="word">Word</option>
-                    </select>
-                     <!-- Mood
-                    </button>-->
-                    <!--<div class="dropdown-menu">
-                      <a id="unchosen-dropdown" class="dropdown-item" href="#">Word</a>
-                    </div>-->
-                      
-                  <!--</div>-->
-                  <input type="text" class="form-control" name="main-input" aria-label="Text input with dropdown button" id="search">
-                    <button id="default-button" class="button button-solid">SEARCH</button>
-                
-                </div>
-                <a id="more-options" class="button button-outline right my1">More options</a>
-                
-                
-                <div id="hidden-options">
-                    <div class="form-group">
-                        <label class="left" for="formGroupExampleInput">Genres to include</label>
-                        <input type="text" name="include" class="form-control" id="formGroupExampleInput" placeholder="pop">
-                    </div>
-                    <div class="form-group">
-                        <label class="left" for="formGroupExampleInput2">Genres to exclude</label>
-                        <input type="text" name="exclude" class="form-control" id="formGroupExampleInput2" placeholder="rock, opera, hip-hop">
-                    </div>
-                    <div class="form-group">
-                        <label class="left" for="formGroupExampleInput2">Years</label>
-                        <input type="text" name="years" class="form-control" id="formGroupExampleInput2" placeholder="1972">
-                        <button id="hidden-button" class="button button-solid right my2 p2">SEARCH</button>
-                    </div>
-                    
-                </div>
-                
-            </form>
+        <div id="loading">
+          <p class="heavy" id="load">Your results are loading!</p>
+          <img id="bar" src="/static/images/loadingimage.gif" alt="progress bar">
         </div>
+        
+        <div id="content">
+            <h1 class="center lead" id="title">Find songs that speak to one another</h1>
+        
+            <div id="box" class="col-4 center mx-auto p2">
+                <form action="." method="POST">
+                    <p class="white left mx-auto p1">Create a playlist.</p>
+
+
+                    <div class="input-group">
+                      <!--<div class="input-group-btn">-->
+                        <select id="default-dropdown" type="button" name="dropdown" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <option value="mood">Mood</option>
+                            <option value="word">Word</option>
+                        </select>
+                         <!-- Mood
+                        </button>-->
+                        <!--<div class="dropdown-menu">
+                          <a id="unchosen-dropdown" class="dropdown-item" href="#">Word</a>
+                        </div>-->
+
+                      <!--</div>-->
+                      <input type="text" class="form-control" name="main-input" aria-label="Text input with dropdown button" id="search">
+                        <button id="default-button" class="button button-solid" onclick="loading();">SEARCH</button>
+
+                    </div>
+                    <a id="more-options" class="button button-outline right my1">More options</a>
+
+
+                    <div id="hidden-options">
+                        <div class="form-group">
+                            <label class="left" for="formGroupExampleInput">Genres to include</label>
+                            <input type="text" name="include" class="form-control" id="formGroupExampleInput" placeholder="pop">
+                        </div>
+                        <div class="form-group">
+                            <label class="left" for="formGroupExampleInput2">Genres to exclude</label>
+                            <input type="text" name="exclude" class="form-control" id="formGroupExampleInput2" placeholder="rock, opera, hip-hop">
+                        </div>
+                        <div class="form-group">
+                            <label class="left" for="formGroupExampleInput2">Years</label>
+                            <input type="text" name="years" class="form-control" id="formGroupExampleInput2" placeholder="1972">
+                            <button id="hidden-button" class="button button-solid right my2 p2" onclick="loading();">SEARCH</button>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        
+        
     
         <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>

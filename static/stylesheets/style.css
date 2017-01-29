@@ -18,7 +18,7 @@
 body {
     //display: none;
     background-image: url(/static/images/trees.png);
-    //background-attachment: fixed;
+    background-attachment: fixed;
     background-position: center center;
     font-family: "Roboto", sans-serif;
     //font-weight: 300;
@@ -62,7 +62,7 @@ input {
 h1 {
     margin-top: 150px;
     margin-bottom: 50px;
-    font-size: 64px;
+    //font-size: 64px;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -163,4 +163,32 @@ option {
 
 .modal-footer {
     margin-top: 50px;
+}
+
+.sub {
+    font-size: 84px !important;
+}
+
+h1#special {
+    font-size: 64px !important;
+}
+
+#loading {
+    width: 400px;
+    height: 200px;
+    display: none;
+    cursor: wait;
+    margin: 0 auto;
+}
+
+#load {
+    margin-top: 300px;
+    text-align: center;
+}
+
+#bar {
+    margin: 0 auto;
+    text-align: center;
+    height: 20px;
+    width: 100%;
 }

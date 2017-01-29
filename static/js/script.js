@@ -13,6 +13,30 @@ var int = setInterval(function() {
     }
 }, 50);*/
 
+function loading(){
+            console.log("hello");
+            $("#loading").show();
+            $("#content").hide();       
+}
+
+$("iframe").hide();
+$("iframe").ready(function() {
+    $("iframe").show();
+});
+
+/*$('<img/>').attr('src', '/static/images/trees.png').load(function() {
+   $(this).remove(); // prevent memory leaks as @benweet suggested
+   $('body').css('background-image', 'url(/static/images/trees.png)');
+});*/
+
+$(function() {
+    $('body').hide();
+    $('body').ready(function() { 
+        $('body').show();
+        alert('ready');        
+    });
+});
+
 
 
 $("#more-options").click(function(event) {
