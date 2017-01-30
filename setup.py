@@ -7,7 +7,6 @@ import json
 import requests
 import base64
 import ast
-import playlist
 
 try:
     from urllib.parse import urlparse

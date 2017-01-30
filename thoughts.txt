@@ -1,0 +1,50 @@
+hello readers!
+
+Originally, we planned on having two main search modes: 'mood' and 'word'
+
+The idea was that we were gonna have additional search fields for each namel:
+
+Genres to include
+
+Genres to exclude
+
+Year
+
+This iwas relatively easy to implement for the word search. Just make the API
+call and include the other search terms in the string. However, the mood
+search, searched playlists objects. HAving these search terms for the mood
+searched too assumed that the playlist object would include these
+possibilities or if not, it could be possible to iterate through the track
+objects and search for year and genre in the objects.
+
+As it turned out, it was only possible to search these terms as queries. My
+assumption about the searches was incorrect and so we had to redisgn the
+interface to include only mood (and instead work on improving the playlist
+search) for the mood mode but and onl keep the functionalities for the word
+search. 
+
+Instead we are thinking of adding different ways to customize the mood search.
+Some ideas include audio features, top listened function, less listened
+function and mixed.
+
+See how it goes
+
+kbaj 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -11,9 +11,6 @@ from unicodedata import normalize
 
 import tailor as tlr
 import setup as stp
-import base64 # temp
-import json # temp
-import requests # temp
 
 # Create templates folder
 tmpl_fldr = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
@@ -34,18 +31,21 @@ def landing_page():
 		include = request.form['include']
 		exclude = request.form['exclude']
 		years = request.form['years']
-		print(include)
-		print(exclude)
+		print(dropdown)
 		print(years)
-		if years != None:
+		if (dropdown == 'word') and (years != None):
 			query = query + " year:" + years
-			print(query) 
+		if (dropdown == 'word') and (include != None):
+			query = query + " year:" + years + year_code
+		if (dropdown == 'word') and (exclude != None):
+			query = query + " NOT " + exlude 
 		return redirect(url_for('playlist', query=query, dropdown=dropdown))
 	
 
 # Displays playlist on playlist page
 @app.route('/playlist/<query>+<dropdown>', methods=['GET','POST'])
 def playlist(query, dropdown):
+	print(query)
 	if request.method == 'GET':
 		if dropdown == 'mood':
 			current_songs = tlr.get_mood_songs(query)
@@ -58,7 +58,6 @@ def playlist(query, dropdown):
 	elif request.method == 'POST':
 		playlist_name = request.form['text']
 		session['playlist_name'] = playlist_name
-		print("hello");
 		return stp.index()
 
 
@@ -67,7 +66,6 @@ def playlist(query, dropdown):
 def auth():
 	playlist_name = request.form['text']
 	session['playlist_name'] = playlist_name
-	print("hi");
 	return stp.index()
 
 
