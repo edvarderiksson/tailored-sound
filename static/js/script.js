@@ -24,22 +24,67 @@ $("iframe").ready(function() {
     $("iframe").show();
 });
 
-/*$('<img/>').attr('src', '/static/images/trees.png').load(function() {
-   $(this).remove(); // prevent memory leaks as @benweet suggested
-   $('body').css('background-image', 'url(/static/images/trees.png)');
-});*/
 
 $(function() {
     $('body').hide();
     $('body').ready(function() { 
         $('body').show();
-        alert('ready');        
+        //alert('ready');        
     });
 });
+/*
+$('#mood').each(function() {
+    if(this.selected) {
+        $("#hidden-options").hide();
+    }
+
+});*/
+
+//console.log($('#default-dropdown').val());
+
+//console.log($("#default-dropdown option:selected").html());
+
+$("#default-dropdown ").change(showDropdown);
+
+function showDropdown() {
+    var choice = $("#default-dropdown option:selected").html();    
+    console.log(choice);
+    
+    if (choice == "Mood"){
+        $("#hidden-options").css("display", "none");
+        $("#default-button").css("display", "block");
+        $("#search").css("border-radius", 0);
+    }
+    else {
+        $("#hidden-options").css("display", "block");
+        $("#default-button").css("display", "none");
+        $("#search").css("border-radius", 4);
+    }
+
+}
 
 
 
-$("#more-options").click(function(event) {
+/*if ($('#mood').selected) {
+    console.log("mood");
+    $("#hidden-options").css("display", "none");
+    
+
+
+}
+
+if ($('#word').selected) {
+    console.log("word");
+    $("#hidden-options").css("display", "block");
+    
+
+
+}*/
+
+
+
+
+/*$("#more-options").click(function(event) {
     event.preventDefault();
     if($("#more-options").text() == "More options"){
         $("#more-options").text("Fewer options");
@@ -58,7 +103,7 @@ $("#more-options").click(function(event) {
         $("a#more-options").text("More options");
     }
     
-});
+});*/
 
 /*$("#unchosen-dropdown").click(function(event) {
     event.preventDefault();
