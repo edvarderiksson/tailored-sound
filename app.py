@@ -32,13 +32,14 @@ def landing_page():
 		exclude = request.form['exclude']
 		years = request.form['years']
 		print(dropdown)
-		print(years)
-		if (dropdown == 'word') and (years != None):
+		print(years==None)
+		print()
+		if (dropdown == 'word') and (years != ''):
 			query = query + " year:" + years
-		if (dropdown == 'word') and (include != None):
+		if (dropdown == 'word') and (include != ''):
 			query = query + " genre:" + include
-		if (dropdown == 'word') and (exclude != None):
-			query = query + " NOT " + exlude 
+		if (dropdown == 'word') and (exclude != ''):
+			query = query + " NOT genre: " + exclude 
 		return redirect(url_for('playlist', query=query, dropdown=dropdown))
 	
 
