@@ -36,7 +36,7 @@ def landing_page():
 		if (dropdown == 'word') and (years != None):
 			query = query + " year:" + years
 		if (dropdown == 'word') and (include != None):
-			query = query + " year:" + years + year_code
+			query = query + " genre:" + include
 		if (dropdown == 'word') and (exclude != None):
 			query = query + " NOT " + exlude 
 		return redirect(url_for('playlist', query=query, dropdown=dropdown))

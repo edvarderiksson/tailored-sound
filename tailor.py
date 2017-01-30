@@ -23,15 +23,6 @@ def get_track_songs(query):
 	return songs
 
 def get_mood_songs(query):
-
-	parsed_query = query.split()
-	year_code = '7351'
-
-	if parsed_query[((len(parsed_query))-1)] == year_code:
-		
-
-
-	print(parsed_query)
 	
 	parameters = {'q':query,'type':'playlist', 'limit': '20'}
 	r = requests.get('https://api.spotify.com/v1/search', params=parameters)
