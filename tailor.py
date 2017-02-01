@@ -11,8 +11,8 @@ import sort as srt
 # Method that finds 50 songs based on track input
 
 def get_track_songs(query):
-	parameters = {'q':query, 'type':'track','limit':'50'}
-	r = requests.get('https://api.spotify.com/v1/search', params=parameters)
+	params = {'q':query, 'type':'track', 'genre':'country', 'limit':'50'}
+	r = requests.get('https://api.spotify.com/v1/search', params=params)
 	data = json.loads(r.text)
 	songs = []
 

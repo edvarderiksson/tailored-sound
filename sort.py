@@ -1,11 +1,5 @@
 # contains the sorting algorithms for the playlist searches
 
-
-
-# Quicksort
-
-# Need to implement quicksort 
-
 # 50 most popular
 
 def get_fifty(d):

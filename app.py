@@ -31,35 +31,36 @@ def landing_page():
 		include = request.form['include']
 		exclude = request.form['exclude']
 		years = request.form['years']
-		print(dropdown)
-		print(years==None)
-		print()
+
 		if (dropdown == 'word') and (years != ''):
 			query = query + " year:" + years
 		if (dropdown == 'word') and (include != ''):
 			query = query + " genre:" + include
 		if (dropdown == 'word') and (exclude != ''):
-			query = query + " NOT genre: " + exclude 
+			query = query + " NOT " + exclude 
 		return redirect(url_for('playlist', query=query, dropdown=dropdown))
 	
 
 # Displays playlist on playlist page
 @app.route('/playlist/<query>+<dropdown>', methods=['GET','POST'])
 def playlist(query, dropdown):
-	print(query)
-	if request.method == 'GET':
-		if dropdown == 'mood':
-			current_songs = tlr.get_mood_songs(query)
-			session['songs'] = current_songs
-			return render_template('playlist.html', songs=current_songs)
-		elif dropdown == 'word':
-			current_songs = tlr.get_track_songs(query)
-			session['songs'] = current_songs
-			return render_template('playlist.html', songs=current_songs)
-	elif request.method == 'POST':
-		playlist_name = request.form['text']
-		session['playlist_name'] = playlist_name
-		return stp.index()
+	try:
+		if request.method == 'GET':
+			if dropdown == 'mood':
+				current_songs = tlr.get_mood_songs(query)
+				session['songs'] = current_songs
+				return render_template('playlist.html', songs=current_songs)
+			elif dropdown == 'word':
+				current_songs = tlr.get_track_songs(query)
+				session['songs'] = current_songs
+				return render_template('playlist.html', songs=current_songs)
+		elif request.method == 'POST':
+			playlist_name = request.form['text']
+			session['playlist_name'] = playlist_name
+			return stp.index()
+
+	except IndexError:
+		return render_template('error_page.html')
 
 
 #routing for "Add playlist to Spotify" button on playlist results template page
@@ -74,6 +75,12 @@ def auth():
 @app.route("/addplaylist/q") # make sure to add this url ("http://127.0.0.1:5000/addplaylist/q") to your Spotify Developers My Apps page
 def add_playlist():
 	return stp.callback()
+
+# Error handling for wrong url
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
 
 
 
