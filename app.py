@@ -27,7 +27,6 @@ def landing_page():
 	elif request.method == 'POST':
 		# dropdown will hold the value 'mood' or 'word'
 		dropdown = request.form['dropdown']
-                print("dropdown:" + type(dropdown))
                 query = request.form['main-input']
 		include = request.form['include']
 		exclude = request.form['exclude']
