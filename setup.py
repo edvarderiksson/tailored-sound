@@ -7,14 +7,17 @@ import json
 import requests
 import base64
 import ast
+import os
 
 try:
     from urllib.parse import urlparse
 except ImportError:
      from urlparse import urlparse
 
-with open("key.json") as json_data_file:
-	key = json.load(json_data_file)
+# with open("key.json") as json_data_file:
+       # key = json.load(json_data_file)
+
+
 
 '''
 Anything that deals with API calls goes in this file
@@ -22,8 +25,10 @@ Anything that deals with API calls goes in this file
 '''
 
 # links to keys
-CLIENT_ID = key['CLIENT_ID'] 
-CLIENT_SECRET = key['CLIENT_SECRET']
+# CLIENT_ID = key['CLIENT_ID'] 
+CLIENT_ID = CLIENT_ID in os.environ
+# CLIENT_SECRET = key['CLIENT_SECRET']
+CLIENT_SECRET = CLIENT_SECRET in os.environ
 
 def basic_credentials():
 
