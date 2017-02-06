@@ -53,7 +53,8 @@ def callback():
 	code_payload = {
 		"grant_type": "authorization_code",
 		"code": str(auth_token),
-		"redirect_uri": "http://127.0.0.1:5000/addplaylist/q"
+		# "redirect_uri": "http://127.0.0.1:5000/addplaylist/q"
+                "redirect_uri": "https://tailored-sound.herokuapp.com/addplaylist/q"
 	}
 	base64encoded = base64.b64encode((CLIENT_ID+":"+CLIENT_SECRET).encode())
 	headers = {"Authorization": "Basic " + base64encoded.decode()}
@@ -117,9 +118,11 @@ SPOTIFY_API_URL = "{}/{}".format(SPOTIFY_API_BASE_URL, API_VERSION)
 
 
 # Server-side Parameters
-CLIENT_SIDE_URL = "http://127.0.0.1"
-PORT = 5000
-REDIRECT_URI = "{}:{}/addplaylist/q".format(CLIENT_SIDE_URL, PORT)
+# CLIENT_SIDE_URL = "http://127.0.0.1"
+CLIENT_SIDE_URL = "https://tailored-sound.herokuapp.com/"
+# PORT = 5000
+# REDIRECT_URI = "{}:{}/addplaylist/q".format(CLIENT_SIDE_URL, PORT)
+REDIRECT_URI = "{}/addplaylist/q".format(CLIENT_SIDE_URL)
 SCOPE = "playlist-modify-public playlist-modify-private"
 STATE = ""
 SHOW_DIALOG_bool = True
