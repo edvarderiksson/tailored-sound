@@ -121,7 +121,7 @@ SPOTIFY_API_URL = "{}/{}".format(SPOTIFY_API_BASE_URL, API_VERSION)
 
 # Server-side Parameters
 # CLIENT_SIDE_URL = "http://127.0.0.1"
-CLIENT_SIDE_URL = "https://tailored-sound.herokuapp.com/"
+CLIENT_SIDE_URL = "https://tailored-sound.herokuapp.com"
 # PORT = 5000
 # REDIRECT_URI = "{}:{}/addplaylist/q".format(CLIENT_SIDE_URL, PORT)
 REDIRECT_URI = "{}/addplaylist/q".format(CLIENT_SIDE_URL)
