@@ -26,9 +26,9 @@ Anything that deals with API calls goes in this file
 
 # links to keys
 # CLIENT_ID = key['CLIENT_ID'] 
-CLIENT_ID = CLIENT_ID in os.environ
+CLIENT_ID = 'CLIENT_ID' in os.environ
 # CLIENT_SECRET = key['CLIENT_SECRET']
-CLIENT_SECRET = CLIENT_SECRET in os.environ
+CLIENT_SECRET = 'CLIENT_SECRET' in os.environ
 
 def basic_credentials():
 
