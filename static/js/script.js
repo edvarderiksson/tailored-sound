@@ -42,6 +42,7 @@ function showDropdown() {
         $("#search").css("border-radius", 0);
     }
     else {
+        console.log(choice);
         $("#hidden-options").css("display", "block");
         $("#default-button").css("display", "none");
         $("#search").css("border-radius", 4);

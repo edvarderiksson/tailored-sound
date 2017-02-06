@@ -17,7 +17,7 @@
 
 body {
     //display: none;
-    background-image: url(/static/images/trees.png);
+    background-image: url(/static/images/trees.jpg);
     background-attachment: fixed;
     background-position: center center;
     font-family: "Roboto", sans-serif;
@@ -88,7 +88,7 @@ h1 {
 
 
 #hidden-options {
-    margin-top: 50px;
+    margin-top: 10px;
     display: none;
 }
 
@@ -231,4 +231,10 @@ button:hover {
 
 #submit-modal {
     margin-right: -15px;
+}
+
+
+select {
+    background: url(/static/images/arrow-down-b.png) 52px 7px /20px 18px no-repeat;
+    width: 80px;
 }
