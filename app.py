@@ -28,7 +28,7 @@ def landing_page():
 		# dropdown will hold the value 'mood' or 'word'
 		dropdown = request.form['dropdown']
 		print(type(dropdown))
-        query = request.form['main-input']
+		query = request.form['main-input']
 		include = request.form['include']
 		exclude = request.form['exclude']
 		years = request.form['years']
