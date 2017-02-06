@@ -20,9 +20,9 @@
         
         <nav class="m0 p1 clearfix fit bg-black">
             <ul class="list-reset fit my1 p0">
-                 <li id="logo" class="pl2 inline-block mr1 left white light lead prpl"><a href="/">tailored sound</a></li>
-                <li class="inline-block mr1 right white light lightlead light"><a class="white text-decoration-none" href="/">play</a></li>
-                <li class="inline-block mr1 right white lightlead light"><a href="/about" class="white text-decoration-none">about</a></li>
+                <li class="pl2 inline-block mr1 left light lead prpl logo"><a href="/" style="color:#444BC5;">tailored sound</a></li>
+                <li class="inline-block mr2 right white light lead light navsize"><a class="white text-decoration-none" href="/">PLAY</a></li>
+                <li class="inline-block mr2 right white lead light navsize"><a href="/about" class="white text-decoration-none">ABOUT</a></li>
             </ul> 
         </nav>
         
@@ -36,11 +36,11 @@
             
             {% for i in songs %} 
    
-            <iframe src="https://embed.spotify.com/?uri={{ i }}" width="900" height="90" frameborder="0" allowtransparency="true"></iframe>
+            <iframe src="https://embed.spotify.com/?uri={{ i }}" width="100%" height="90" frameborder="0" allowtransparency="true"></iframe>
                 
             {% endfor %}
             <form>
-                <button type="button" class="button right" data-toggle="modal" data-target="#exampleModal">ADD PLAYLIST TO SPOTIFY</button>
+                <button type="button" class="button right themecolor" data-toggle="modal" style="background-color:#444BC5; border:none;" data-target="#exampleModal">ADD PLAYLIST TO SPOTIFY</button>
             </form>
              
         </div>
@@ -49,14 +49,16 @@
               
             <div class="modal-content">
                 
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Please enter a name for your playlist.</h5>
+              <!--<div class="modal-header">-->
+                
+              <!--</div>-->
+                
+              <div class="modal-body p2">
+                <!--<h5 class="modal-title" id="exampleModalLabel">Add playlist</h5>-->
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
-              </div>
-                
-              <div class="modal-body">
+                <p class="ml2 mt1">Please enter a name for your playlist.</p>
                 {% with messages = get_flashed_messages() %}
                   {% if messages %}
                     <ul>
@@ -66,15 +68,19 @@
                     </ul>
                   {% endif %}
                 {% endwith %}
-              </div>
-                <form action="/playlist" method="POST">
-                <input type="text" class="input mr2 ml2" height="32"  name="text">
+              
+                <form class="pr3" action="/playlist" method="POST">
+                   
+                    <input type="text" class="input mr3 ml2" style="width:100%;" height="32" name="text">
+                    <!--<button type="button" class="button" data-dismiss="modal" style="border:none;">Close</button>-->
+                    <button type="submit" class="button themecolor white right mt2" id ="submit-modal"style="background-color:#444BC5; border:none;">Submit</button>
                     
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
-              </div>
+                  </form>
+                    
+                </div>   
+              <!--<div class="modal-footer">
+                
+              </div>-->
                 
             </div>
           </div>

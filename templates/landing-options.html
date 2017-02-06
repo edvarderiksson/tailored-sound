@@ -19,45 +19,41 @@
     
     <body class="m0">
         
+        <!-- navbar -->
         <nav class="m0 py1 clearfix fit bg-black">
             <ul class="list-reset fit my1 p0">
-                 <li id="logo" class="pl2 inline-block mr1 left white light lead prpl"><a href="/">tailored sound</a></li>
-                <li class="inline-block mr1 right white light lightlead light"><a class="white text-decoration-none" href="/">play</a></li>
-                <li class="inline-block mr1 right white lightlead light"><a href="/about" class="white text-decoration-none">about</a></li>
+                <li class="pl2 inline-block mr1 left light lead prpl logo"><a href="/" style="color:#444BC5;">tailored sound</a></li>
+                <li class="inline-block mr2 right white light lead light navsize"><a class="white text-decoration-none" href="/">PLAY</a></li>
+                <li class="inline-block mr2 right white lead light navsize"><a href="/about" class="white text-decoration-none">ABOUT</a></li>
             </ul> 
         </nav>
         
+        <!-- loading bar -->
         <div id="loading">
           <p class="heavy" id="load">Your results are loading!</p>
           <img id="bar" src="/static/images/loadingimage.gif" alt="progress bar">
         </div>
         
+        <!-- main content -->
         <div id="content">
             <h1 class="center lead" id="title">Find songs that speak to one another</h1>
         
+            <!-- main input -->
             <div id="box" class="col-4 center mx-auto p2">
                 <form action="." method="POST">
                     <p class="white left mx-auto p1">Create a playlist.</p>
 
 
                     <div class="input-group">
-                      <!--<div class="input-group-btn">-->
                         <select id="default-dropdown" type="button" name="dropdown" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <option id ="mood" value="mood">Mood</option>
                             <option id="word" value="word">Word</option>
                         </select>
-                         <!-- Mood
-                        </button>-->
-                        <!--<div class="dropdown-menu">
-                          <a id="unchosen-dropdown" class="dropdown-item" href="#">Word</a>
-                        </div>-->
-
-                      <!--</div>-->
+                         
                       <input type="text" class="form-control" name="main-input" aria-label="Text input with dropdown button" id="search">
                         <button id="default-button" class="button button-solid" onclick="loading();">SEARCH</button>
 
                     </div>
-                    <!--<a id="more-options" class="button button-outline right my1">More options</a>-->
 
 
                     <div id="hidden-options">

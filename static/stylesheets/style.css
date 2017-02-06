@@ -54,7 +54,7 @@ p {
 }
 
 input {
-    width: 250px;
+    
     height: 30px;
     font-size: 14px;
 }
@@ -74,13 +74,13 @@ h1 {
     -moz-border-radius: 16px;
     border-radius: 16px;
     //background-color: #444BC5;
-    //border: none;
+    border: none;
     padding:4 15px;
     font-family: 'Roboto', sans-serif;
 }
 
 .prpl {
-    color: #444BC5;
+    color: #444BC5; 
     font-style: bold;
     letter-spacing: 4px;
 }
@@ -140,8 +140,9 @@ h1 {
     font-weight: 400;
 }
 
-#logo {
+.logo {
     font-size: 16px;
+    color: #444BC5 !important;
 }
 
 #default-button {
@@ -152,6 +153,7 @@ h1 {
 }
 
 input#search {
+    width: 250px;
     margin-left: -2px;
     margin-right: 0px;
     z-index: 0;
@@ -164,9 +166,6 @@ input:focus {
     //box-shadow: 0 0 10px #719ECE;
 }
 
-option {
-    color: red;
-}
 
 .modal-footer {
     margin-top: 50px;
@@ -184,7 +183,6 @@ h1#special {
     width: 400px;
     height: 200px;
     display: none;
-    cursor: wait;
     margin: 0 auto;
 }
 
@@ -198,4 +196,39 @@ h1#special {
     text-align: center;
     height: 20px;
     width: 100%;
+}
+
+.navsize {
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #444BC5;
+}
+
+.themecolor {
+    background-color: #444BC5;
+}
+
+iframe {
+    width: 100%;
+}
+
+button {
+    border: none !important;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.close {
+    margin-top: -10px;
+}
+
+
+
+#submit-modal {
+    margin-right: -15px;
 }
