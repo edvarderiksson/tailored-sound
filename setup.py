@@ -145,5 +145,5 @@ def index():
     auth_url = "{}/?{}".format(SPOTIFY_AUTH_URL, url_args)
     return redirect(auth_url)
 
-if __name__ == "__main__":
+if(__name__ == "__main__"):
     app.run(debug=True,port=PORT)

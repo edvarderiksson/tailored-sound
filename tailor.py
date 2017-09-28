@@ -40,7 +40,7 @@ def get_mood_songs(query):
         song_num = 0
 
         for track in range(0,len(track_data['items'])):
-            if track_data['items'][song_num]['track']['uri'] in all_songs:
+            if(track_data['items'][song_num]['track']['uri'] in all_songs):
                 current_value = all_songs[track_data['items'][song_num]['track']['uri']]
                 current_value += 1
                 all_songs[track_data['items'][song_num]['track']['uri']] = current_value
